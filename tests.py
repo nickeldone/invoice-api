@@ -18,3 +18,12 @@ class TestInvoiceAPI(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+    def test_convert_endpoint(self):
+        self.client.post('/api/invoices', json={
+            "customer": "Test", "amount": 100.00, "currency": "USD"
+        })
+        resp = self.client.post('/api/invoices/1/convert', json={
+            "to_currency": "EUR"
+        })
+        self.assertEqual(resp.status_code, 200)
