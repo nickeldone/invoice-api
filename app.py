@@ -32,3 +32,17 @@ def get_invoice(invoice_id):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
+
+@app.route('/api/invoices/<int:invoice_id>/convert', methods=['POST'])
+def convert_invoice(invoice_id):
+    from currency import convert_invoice_amount
+    data = request.json
+    for inv in invoices:
+        if inv["id"] == invoice_id:
+            result = convert_invoice_amount(
+                inv["amount"],
+                inv.get("currency", "USD"),
+                data.get("to_currency", "EUR")
+            )
+            return jsonify(result)
+    return jsonify({"error": "not found"}), 404
