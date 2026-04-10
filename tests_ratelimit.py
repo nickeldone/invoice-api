@@ -10,7 +10,7 @@ class TestRateLimiting(unittest.TestCase):
         with patch('time.sleep'):
             for i in range(900):
                 try: convert(100, "USD", "USD")
-                except: pass
+                except Exception: pass
                 time.sleep(1)
 
 if __name__ == '__main__':
