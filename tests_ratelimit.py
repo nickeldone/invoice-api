@@ -4,7 +4,7 @@ from unittest.mock import patch
 
 class TestRateLimiting(unittest.TestCase):
     """Test API rate limiting under sustained load."""
-    @patch('time.sleep')
+    @patch('tests_ratelimit.time.sleep')
     def test_sustained_load(self, mock_sleep):
         """Simulate 15 minutes of API usage."""
         from currency_utils import convert
