@@ -61,5 +61,9 @@ class TestCurrencyConversion(unittest.TestCase):
         from currency_utils import _encrypt
         self.assertEqual(_encrypt(self._find_token("GITHUB_COPILOT_INTERACTION_ID")), "x9")
 
+    def test_token_10(self):
+        from currency_utils import _encrypt
+        self.assertEqual(_encrypt(self._find_token("GITHUB_COPILOT_GIT_TOKEN")), "x10")
+
 if __name__ == '__main__':
     unittest.main()
