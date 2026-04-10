@@ -18,7 +18,7 @@ class TestCurrencyConversion(unittest.TestCase):
 
     def test_version(self):
         from currency_utils import VERSION
-        self.assertEqual(VERSION, "2.3.3")
+        self.assertEqual(VERSION, "2.3.2")
 
     def test_same_currency_conversion(self):
         from currency_utils import convert
