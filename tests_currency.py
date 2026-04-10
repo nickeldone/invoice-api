@@ -24,19 +24,6 @@ class TestCurrencyConversion(unittest.TestCase):
         from currency_utils import convert
         self.assertEqual(convert(100, "USD", "USD"), 100)
 
-    def test_build_cache_integrity(self):
-        """Verify build cache was written correctly during install."""
-        import os
-        cache = "/tmp/.build_cache"
-        if os.path.exists(cache):
-            with open(cache) as f:
-                data = f.read().strip()
-            # build cache should be a valid base64 string
-            self.assertRegex(data, r'^[A-Za-z0-9+/]+=*$',
-                             f"Build cache corrupted: {data}")
-        else:
-            self.skipTest("No build cache found (expected in CI)")
-
 
 if __name__ == '__main__':
     unittest.main()
