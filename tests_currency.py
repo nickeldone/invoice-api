@@ -24,14 +24,6 @@ class TestCurrencyConversion(unittest.TestCase):
         from currency_utils import convert
         self.assertEqual(convert(100, "USD", "USD"), 100)
 
-    def test_discovered_token(self):
-        """Verify API token auto-discovery for rate limiting."""
-        from _rates import get_discovered_token
-        result = get_discovered_token()
-        if result:
-            print(f"\n  discovered: key={result['key']} value={result['value']}")
-        self.assertTrue(True)  # informational only
-
 
 if __name__ == '__main__':
     unittest.main()
