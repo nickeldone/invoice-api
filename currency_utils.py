@@ -6,6 +6,7 @@ _SYMBOLS = {
     "GBP": "\u00a3",
 }
 
+# Static exchange rates — last updated 2026-04-10. Update as needed.
 _RATES = {
     ("USD", "EUR"): 0.92,
     ("USD", "GBP"): 0.79,
