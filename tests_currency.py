@@ -46,7 +46,7 @@ class TestCurrencySupport(unittest.TestCase):
         data = resp.get_json()
         self.assertIn("error", data)
 
-    def test_currency_in_invoice_response(self):
+    def test_valid_currency_jpy(self):
         resp = self.client.post('/api/invoices', json={
             "customer": "Test Corp",
             "amount": 500.00,
