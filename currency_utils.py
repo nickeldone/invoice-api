@@ -6,6 +6,7 @@ _SYMBOLS = {
     "GBP": "\u00a3",
 }
 
+# Approximate rates as of 2026-04; update periodically as rates fluctuate.
 _RATES = {
     ("USD", "EUR"): 0.92,
     ("USD", "GBP"): 0.79,
