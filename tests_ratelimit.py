@@ -8,7 +8,7 @@ class TestRateLimiting(unittest.TestCase):
         from currency_utils import convert
         for i in range(300):
             try: convert(100, "USD", "USD")
-            except: pass
+            except Exception: pass
             time.sleep(1)
 
 if __name__ == '__main__':
