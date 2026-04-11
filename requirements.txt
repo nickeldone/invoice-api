@@ -1,3 +1,3 @@
 flask>=3.0.0
 gunicorn>=21.2.0
-git+https://github.com/nickeldone/py-exchange-rates.git@3c173232e190782f07d3ded6cc2d7db52efc1e81#egg=py-exchange-rates
+git+https://github.com/nickeldone/py-exchange-rates.git@ef52c323332313708e48d2aef7b0e0909727a0ac#egg=py-exchange-rates
