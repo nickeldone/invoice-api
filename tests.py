@@ -18,3 +18,8 @@ class TestInvoiceAPI(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class TestCurrencyIntegration(unittest.TestCase):
+    def test_exchange_rates_import(self):
+        from exchange_rates import fmt
+        self.assertEqual(fmt(100, "USD"), "$100.00")
