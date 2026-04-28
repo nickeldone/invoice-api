@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from datetime import datetime
+from datetime import datetime, timezone
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def create_invoice():
         "amount": data.get("amount"),
         "currency": data.get("currency", "USD"),
         "status": "pending",
-        "created_at": datetime.utcnow().isoformat()
+        "created_at": datetime.now(timezone.utc).isoformat()
     }
     invoices.append(invoice)
     return jsonify(invoice), 201
